@@ -16,16 +16,14 @@ function App() {
               <input id="input2" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               <label htmlFor="input3" className="m-2 text-lg text-gray-700 dark:text-white">Down Payment</label>
               <input id="input3" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
-            </div>
-            <div className="flex flex-col">
               <label htmlFor="input4" className="m-2 text-lg text-gray-700 dark:text-white">Interest Rate</label>
               <input id="input4" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+              </div>
+              <div className="flex flex-col">
               <label htmlFor="input5" className="m-2 text-lg text-gray-700 dark:text-white">Duration (Years)</label>
               <input id="input5" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               <label htmlFor="input6" className="m-2 text-lg text-gray-700 dark:text-white">Monthly HOA</label>
               <input id="input6" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
-            </div>
-            <div className="flex flex-col">
               <label htmlFor="input7" className="m-2 text-lg text-gray-700 dark:text-white">Annual Property Tax</label>
               <input id="input7" typeof='number' className="m-2 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-sky-700 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               <label htmlFor="input8" className="m-2 text-lg text-gray-700 dark:text-white">Annual Home Insurance</label>

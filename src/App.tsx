@@ -1,14 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div>
-    <h1 className="text-3xl font-bold underline text-center">
-      Testing
-    </h1>
-    </div>
+    <main className="bg-white dark:bg-slate-800">
+
+    </main>
   );
 }
 

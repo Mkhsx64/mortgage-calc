@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       {/*Body section of the Mortgage Calculator */}
-      <div className="container min-h-screen flex justify-center w-full mx-auto">
+      <div className="container min-h-screen flex justify-center w-full mx-auto space-x-4">
         <div className="w-full p-6 bg-blue-100 dark:bg-slate-600">
           <div className="w-48 italic mx-auto pt-6 border-b-2 border-orange-500 text-center text-2xl text-blue-700 dark:text-white dark:border-red-500 ">Mortgage Calculator</div>
           <div className="p-2 text-center text-lg text-gray-700 dark:text-white">Lightweight API based mortgage calculator.</div>

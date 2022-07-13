@@ -12,11 +12,9 @@ function App() {
     const themeElement = document.getElementById('themeMode');
     if (element?.classList.contains('dark')) {
       setIcon = faMoon;
-      themeElement?.setAttribute('icon', 'faMoon');
       return;
     } else {
       setIcon = faSun;
-      themeElement?.setAttribute('icon', 'faSun');
       return;
     }
   }

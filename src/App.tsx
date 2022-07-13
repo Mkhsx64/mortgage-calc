@@ -1,7 +1,9 @@
 import React from 'react';
+//import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
   return (
     <>
       {/*Light/Dark mode slider to toggle between preferences*/}

@@ -8,7 +8,7 @@ function App() {
       <div className="container flex justify-center w-full mx-auto space-x-4">
         <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-col">
         <label className="switch">
-          <input type="checkbox" />
+          <input id="slider" type="checkbox" />
           <span className="slider round"></span>
         </label>
         </div>

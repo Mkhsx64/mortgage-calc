@@ -5,11 +5,13 @@ function App() {
   return (
     <>
       {/*Light/Dark mode slider to toggle between preferences*/}
-      <div>
-        <label>
-          <input />
-          <span></span>
+      <div className="container flex justify-center w-full mx-auto space-x-4">
+        <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-col">
+        <label className="switch">
+          <input type="checkbox" />
+          <span className="slider round"></span>
         </label>
+        </div>
       </div>
 
       {/*Body section of the Mortgage Calculator */}

@@ -1,14 +1,25 @@
 import React from 'react';
 import './App.css';
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 function App() {
 
-  const [ldIcon, setldIcon] = useState({
-    return: String
-  });
+  let setIcon = faSun as IconProp;
+  const changeIcon = () => {
+    const element = document.getElementById("parent");
+    const themeElement = document.getElementById('themeMode');
+    if (element?.classList.contains('dark')) {
+      setIcon = faMoon;
+      themeElement?.setAttribute('icon', 'faMoon');
+      return;
+    } else {
+      setIcon = faSun;
+      themeElement?.setAttribute('icon', 'faSun');
+      return;
+    }
+  }
 
   return (
     <>
@@ -17,14 +28,15 @@ function App() {
       {/*Light/Dark mode slider to toggle between preferences*/}
       <div className="container flex justify-center w-full mx-auto space-x-4">
         <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-row">
-        {/*<FontAwesomeIcon className ="m-2" icon={ ldIcon } />*/}
         <label className="switch">
           <input id="slider" type="checkbox" onClick={(() => {
             const element = document.getElementById("parent");
             element?.classList.toggle("dark");
+            changeIcon();
           })}/>
           <span className="slider round"></span>
         </label>
+        <FontAwesomeIcon id='themeMode' className="mx-2" icon={setIcon} />
         </div>
       </div>
 

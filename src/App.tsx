@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
@@ -6,18 +6,20 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 function App() {
 
-  let setIcon = faSun as IconProp;
-  const changeIcon = () => {
-    const element = document.getElementById("parent");
-    const themeElement = document.getElementById('themeMode');
-    if (element?.classList.contains('dark')) {
-      setIcon = faMoon;
-      return;
-    } else {
-      setIcon = faSun;
-      return;
-    }
-  }
+  const [icon, setIcon] = useState(faSun);
+  let idx: number = 0;
+//  let setIcon = faSun as IconProp;
+//  const changeIcon = () => {
+//    const element = document.getElementById("parent");
+//    const themeElement = document.getElementById('themeMode');
+//    if (element?.classList.contains('dark')) {
+//      setIcon = faMoon;
+//      return;
+//    } else {
+//      setIcon = faSun;
+//      return;
+//    }
+//  }
 
   return (
     <>
@@ -30,11 +32,19 @@ function App() {
           <input id="slider" type="checkbox" onClick={(() => {
             const element = document.getElementById("parent");
             element?.classList.toggle("dark");
-            changeIcon();
+            //changeIcon();
+            if (idx > 0) {
+              setIcon(faSun);
+              idx = 0;
+              return;
+            }
+            setIcon(faMoon);
+            idx += 1;
+            console.log(idx);
           })}/>
           <span className="slider round"></span>
         </label>
-        <FontAwesomeIcon id='themeMode' className="mx-2" icon={setIcon} />
+        <FontAwesomeIcon id='themeMode' className="mx-2" icon={icon} />
         </div>
       </div>
 

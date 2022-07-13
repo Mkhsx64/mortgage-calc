@@ -1,7 +1,14 @@
 import React from 'react';
 import './App.css';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
+
+  const [ldIcon, setldIcon] = useState({
+    return: String
+  });
 
   return (
     <>
@@ -9,7 +16,8 @@ function App() {
     <div id="parent">
       {/*Light/Dark mode slider to toggle between preferences*/}
       <div className="container flex justify-center w-full mx-auto space-x-4">
-        <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-col">
+        <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-row">
+        {/*<FontAwesomeIcon className ="m-2" icon={ ldIcon } />*/}
         <label className="switch">
           <input id="slider" type="checkbox" onClick={(() => {
             const element = document.getElementById("parent");

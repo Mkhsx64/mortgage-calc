@@ -4,11 +4,19 @@ import './App.css';
 function App() {
   return (
     <>
+      {/*Light/Dark mode slider to toggle between preferences*/}
+      <div>
+        <label>
+          <input />
+          <span></span>
+        </label>
+      </div>
+
       {/*Body section of the Mortgage Calculator */}
       <div className="container min-h-screen flex justify-center w-full mx-auto space-x-4">
         <div className="w-full p-6 bg-blue-100 dark:bg-slate-600">
           <div className="w-48 italic mx-auto pt-6 border-b-2 border-orange-500 text-center text-2xl text-blue-700 dark:text-white dark:border-red-500 ">Mortgage Calculator</div>
-          <div className="p-2 text-center text-lg text-gray-700 dark:text-white">Lightweight API based mortgage calculator.</div>
+          <div className="p-2 text-center text-lg text-gray-700 dark:text-white">Lightweight API based mortgage calculator. <br/>Loan Amount or Home Value + Down Payment are required. Interest Rate is required.</div>
           <form className="flex flex-row justify-center">
             <div className="flex flex-col">
               <label htmlFor="iLoanAmount" className="m-2 text-lg text-gray-700 dark:text-white">Loan Amount</label>
@@ -22,7 +30,7 @@ function App() {
               </div>
               <div className="flex flex-col">
               <label htmlFor="iDuration" className="m-2 text-lg text-gray-700 dark:text-white">Duration (Years)</label>
-              <input id="iDuration" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+              <input id="iDuration" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="30"></input>
               <label htmlFor="iMonthlyHOA" className="m-2 text-lg text-gray-700 dark:text-white">Monthly HOA</label>
               <input id="iMonthlyHOA" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               <label htmlFor="iAnnualPT" className="m-2 text-lg text-gray-700 dark:text-white">Annual Property Tax</label>

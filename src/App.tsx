@@ -32,7 +32,7 @@ function App() {
             </div>
           </form>
           <div className="flex justify-center m-10">
-            <button className="border-r-4 shadow-lg shadow-blue-500 border-blue-600 font-bold bg-blue-500 hover:bg-blue-300 text-gray-600  p-2 rounded dark:bg-slate-500 dark:text-white border-b-4 dark:shadow-slate-500 dark:border-slate-600 dark:hover:bg-slate-400 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300">Run Report</button>
+            <button type="submit" className="border-r-4 shadow-lg shadow-blue-500 border-blue-600 font-bold bg-blue-500 hover:bg-blue-300 text-gray-600  p-2 rounded dark:bg-slate-500 dark:text-white border-b-4 dark:shadow-slate-500 dark:border-slate-600 dark:hover:bg-slate-400 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300">Run Report</button>
           </div>
         </div>
       </div>

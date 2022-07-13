@@ -6,11 +6,16 @@ function App() {
 
   return (
     <>
+    {/*Wrapping div for toggling light/dark mode*/}
+    <div id="parent">
       {/*Light/Dark mode slider to toggle between preferences*/}
       <div className="container flex justify-center w-full mx-auto space-x-4">
         <div className="w-full flex items-center justify-center bg-blue-300 dark:bg-slate-700 flex-col">
         <label className="switch">
-          <input id="slider" type="checkbox" />
+          <input id="slider" type="checkbox" onClick={(() => {
+            const element = document.getElementById("parent");
+            element?.classList.toggle("dark");
+          })}/>
           <span className="slider round"></span>
         </label>
         </div>
@@ -47,6 +52,7 @@ function App() {
             <button type="submit" className="border-r-4 shadow-lg shadow-blue-500 border-blue-600 font-bold bg-blue-500 hover:bg-blue-300 text-gray-600  p-2 rounded dark:bg-slate-500 dark:text-white border-b-4 dark:shadow-slate-500 dark:border-slate-600 dark:hover:bg-slate-400 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300">Run Report</button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

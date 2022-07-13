@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-import './components/mortgage-request';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 let themeSwitch: boolean = false;
 

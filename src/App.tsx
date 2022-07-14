@@ -21,10 +21,9 @@ let themeSwitch: boolean = false;
 function App() {
 
   const [icon, setIcon] = useState(faSun);
-  const [iValue, setiValue] = useState("");
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
   return (
     <>
@@ -59,23 +58,23 @@ const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
             <form onSubmit={handleSubmit(onSubmit)} id="mCalc" className="flex flex-row justify-center">
               <div className="flex flex-col">
                 <label htmlFor="iLoanAmount" className="m-2 text-lg text-gray-700 dark:text-white">Loan Amount</label>
-                <input id="iLoanAmount" typeof='number' defaultValue={iValue} {...register('iLoanAmount')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iLoanAmount" typeof='number' defaultValue="0" {...register('iLoanAmount')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iHomeValue" className="m-2 text-lg text-gray-700 dark:text-white">Home Value</label>
-                <input id="iHomeValue" typeof='number' defaultValue={iValue} {...register('iHomeValue')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iHomeValue" typeof='number' defaultValue="0" {...register('iHomeValue')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iDownPayment" className="m-2 text-lg text-gray-700 dark:text-white">Down Payment</label>
-                <input id="iDownPayment" typeof='number' defaultValue={iValue} {...register('iDownPayment')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iDownPayment" typeof='number' defaultValue="0" {...register('iDownPayment')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iInterestRate" className="m-2 text-lg text-gray-700 dark:text-white">Interest Rate</label>
-                <input id="iInterestRate" typeof='number' defaultValue={iValue} {...register('iInterestRate')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iInterestRate" typeof='number' defaultValue="0" {...register('iInterestRate')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               </div>
               <div className="flex flex-col">
                 <label htmlFor="iDuration" className="m-2 text-lg text-gray-700 dark:text-white">Duration (Years)</label>
-                <input id="iDuration" typeof='number' defaultValue={iValue} {...register('iDuration')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="30"></input>
+                <input id="iDuration" typeof='number' defaultValue="0" {...register('iDuration')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="30"></input>
                 <label htmlFor="iMonthlyHOA" className="m-2 text-lg text-gray-700 dark:text-white">Monthly HOA</label>
-                <input id="iMonthlyHOA" typeof='number' defaultValue={iValue} {...register('iMonthlyHOA')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iMonthlyHOA" typeof='number' defaultValue="0" {...register('iMonthlyHOA')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iAnnualPT" className="m-2 text-lg text-gray-700 dark:text-white">Annual Property Tax</label>
-                <input id="iAnnualPT" typeof='number' defaultValue={iValue} {...register('iAnnualPT')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iAnnualPT" typeof='number' defaultValue="0" {...register('iAnnualPT')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iAnnualHI" className="m-2 text-lg text-gray-700 dark:text-white">Annual Home Insurance</label>
-                <input id="iAnnualHI" typeof='number' defaultValue={iValue} {...register('iAnnualHI')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iAnnualHI" typeof='number' defaultValue="0" {...register('iAnnualHI')} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               </div>
             </form>
             <div className="flex justify-center m-10">

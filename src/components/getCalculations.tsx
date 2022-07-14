@@ -1,4 +1,4 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
+import { resolve } from "path";
 
 const url: string = 'https://api.api-ninjas.com/v1/mortgagecalculator?'
 
@@ -23,7 +23,7 @@ export async function callMortgageAPI(mortgageData: object) {
     }
     const fetchPromise = fetch(apiURL, {headers: {'X-Api-Key': '6PpBLGUipCmwuuM8HiXvqQ==i198Tfo2IIuhp7TA' }});
     return fetchPromise
-      .then( response => console.log(response.json()))
+      .then( result => result.json())
       .catch(error=> console.log('Error while fetching:', error))
 }
 

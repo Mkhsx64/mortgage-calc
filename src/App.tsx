@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import './App.css';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Formik } from 'formik';
 
 let themeSwitch: boolean = false;
 
+const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+  event.preventDefault();
+}
 
 function App() {
 
   const [icon, setIcon] = useState(faSun);
+  const [iValue, setiValue] = useState("");
 
   return (
     <>
@@ -40,26 +45,26 @@ function App() {
           <div className="w-full p-6 bg-blue-100 dark:bg-slate-600">
             <div className="w-48 italic mx-auto pt-6 border-b-2 border-orange-500 text-center text-2xl text-blue-700 dark:text-white dark:border-red-500 ">Mortgage Calculator</div>
             <div className="p-2 text-center text-lg text-gray-700 dark:text-white">Lightweight API based mortgage calculator. <br />Loan Amount or Home Value + Down Payment are required. Interest Rate is required.</div>
-            <form className="flex flex-row justify-center">
+            <form onSubmit={handleSubmit} className="flex flex-row justify-center">
               <div className="flex flex-col">
                 <label htmlFor="iLoanAmount" className="m-2 text-lg text-gray-700 dark:text-white">Loan Amount</label>
-                <input id="iLoanAmount" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iLoanAmount" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iHomeValue" className="m-2 text-lg text-gray-700 dark:text-white">Home Value</label>
-                <input id="iHomeValue" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iHomeValue" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iDownPayment" className="m-2 text-lg text-gray-700 dark:text-white">Down Payment</label>
-                <input id="iDownPayment" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iDownPayment" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iInterestRate" className="m-2 text-lg text-gray-700 dark:text-white">Interest Rate</label>
-                <input id="iInterestRate" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iInterestRate" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               </div>
               <div className="flex flex-col">
                 <label htmlFor="iDuration" className="m-2 text-lg text-gray-700 dark:text-white">Duration (Years)</label>
-                <input id="iDuration" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="30"></input>
+                <input id="iDuration" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="30"></input>
                 <label htmlFor="iMonthlyHOA" className="m-2 text-lg text-gray-700 dark:text-white">Monthly HOA</label>
-                <input id="iMonthlyHOA" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iMonthlyHOA" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iAnnualPT" className="m-2 text-lg text-gray-700 dark:text-white">Annual Property Tax</label>
-                <input id="iAnnualPT" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iAnnualPT" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90  text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
                 <label htmlFor="iAnnualHI" className="m-2 text-lg text-gray-700 dark:text-white">Annual Home Insurance</label>
-                <input id="iAnnualHI" typeof='number' className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
+                <input id="iAnnualHI" typeof='number' value={iValue} className="m-2 shadow-xl shadow-slate-700/50 dark:shadow-slate-700/90 text-center rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500 dark:focus:ring-red-700 hover:bg-blue-200" placeholder="0"></input>
               </div>
             </form>
             <div className="flex justify-center m-10">

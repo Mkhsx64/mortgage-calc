@@ -11,13 +11,20 @@ const urlElements: Array<string> = [
     "&annual_home_insurance="
 ]
 
-export function callMortgageAPI(mortgageData: object) {
+export async function callMortgageAPI(mortgageData: object) {
     let apiURL: string = url;
     let mArray = Object.values(mortgageData);
-    for (let i = 0; i <= mArray.length; i++) {
+    for (let i = 0; i <= mArray.length - 1; i++) {
         apiURL += urlElements[i] + mArray[i];
     }
-    return;
+    console.log(apiURL);
+    const response = await fetch(apiURL, {
+        method: 'GET',
+        headers: {
+            'X-Api-Key': '6PpBLGUipCmwuuM8HiXvqQ==i198Tfo2IIuhp7TA'
+        },
+    })
+    return response;
 }
 
 

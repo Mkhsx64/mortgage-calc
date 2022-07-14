@@ -17,6 +17,7 @@ type Inputs = {
 }
 
 let themeSwitch: boolean = false;
+let apiResponse;
 
 function App() {
 
@@ -26,8 +27,9 @@ function App() {
   //Define events to handle form inputs
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => {
-    callMortgageAPI(data);
-  };
+  const apiValue = async () => {apiResponse = await callMortgageAPI(data);}
+  alert(apiValue);
+};
 
   return (
     <>

@@ -18,6 +18,10 @@ type Inputs = {
 
 let themeSwitch: boolean = false;
 
+//Made this obj variable to hold the contents of the last API call.
+//Will use this to start creating a custom alert box for the data provided.
+let lastAPIValue: object = [];
+
 function App() {
 
   //Define constants for setting icon dynamically
@@ -28,7 +32,8 @@ function App() {
   const onSubmit: SubmitHandler<Inputs> = data => {
     const apiValue = callMortgageAPI(data);
     //Currently in an alert to show that the API response is working
-    apiValue.then(response => alert(JSON.stringify(response, null, 4)));
+    lastAPIValue = apiValue.then(response => {});
+    alert(JSON.stringify(lastAPIValue, null, 4));
   };
 
   return (

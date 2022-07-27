@@ -28,7 +28,7 @@ function App() {
   const onSubmit: SubmitHandler<Inputs> = data => {
   const apiValue = callMortgageAPI(data);
   //Currently in an alert to show that the API response is working
-  apiValue.then(response => alert(JSON.stringify(response)));
+  apiValue.then(response => alert(JSON.stringify(response, null, 4)));
 };
 
   return (

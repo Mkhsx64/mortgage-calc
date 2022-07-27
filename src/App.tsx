@@ -19,7 +19,7 @@ type Inputs = {
 let themeSwitch: boolean = false;
 
 //Made this obj variable to hold the contents of the last API call.
-//Will use this to start creating a custom alert box for the data provided.
+//Will use this to start creating a modal using react-dynamic-modal.
 let lastAPIValue: object = [];
 
 function App() {

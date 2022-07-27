@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 const url: string = 'https://api.api-ninjas.com/v1/mortgagecalculator?'
 
 

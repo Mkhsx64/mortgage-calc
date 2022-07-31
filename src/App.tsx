@@ -27,6 +27,9 @@ function App() {
   //Define constants for setting icon dynamically
   const [icon, setIcon] = useState(faSun);
 
+  //Define constants for opening and closing the Modal
+  const [isOpen, setIsOpen] = useState(false);
+
   //Define events to handle form inputs
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => {

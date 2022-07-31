@@ -66,7 +66,7 @@ function App() {
           </div>
         </div>
 
-        {/*TODOModal for displaying API Values*/}
+        {/*TODO Modal for displaying API Values*/}
         
 
         {/*Body section of the Mortgage Calculator */}

@@ -66,6 +66,9 @@ function App() {
           </div>
         </div>
 
+        {/*TODOModal for displaying API Values*/}
+        
+
         {/*Body section of the Mortgage Calculator */}
         <div className="container min-h-screen flex justify-center w-full mx-auto space-x-4">
           <div className="w-full p-6 bg-blue-100 dark:bg-slate-600">

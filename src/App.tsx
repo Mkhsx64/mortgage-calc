@@ -3,6 +3,7 @@ import './App.css';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { callMortgageAPI } from './components/getCalculations';
+import { Modal } from './components/Modal';
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -18,6 +19,7 @@ type Inputs = {
 
 let themeSwitch: boolean = false;
 
+//This will be used to populate a Modal
 let lastAPIValue: object = [];
 
 function App() {
@@ -32,8 +34,7 @@ function App() {
     //Currently in an alert to show that the API response is working
     apiValue.then(response => {
       lastAPIValue = response;
-      console.log(lastAPIValue);
-      alert(JSON.stringify(response, null, 4));
+      alert(JSON.stringify(lastAPIValue, null, 4));
     });
   };
 

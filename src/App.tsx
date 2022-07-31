@@ -18,6 +18,8 @@ type Inputs = {
 
 let themeSwitch: boolean = false;
 
+let lastAPIValue: object = [];
+
 function App() {
 
   //Define constants for setting icon dynamically
@@ -29,6 +31,8 @@ function App() {
     const apiValue = callMortgageAPI(data);
     //Currently in an alert to show that the API response is working
     apiValue.then(response => {
+      lastAPIValue = response;
+      console.log(lastAPIValue);
       alert(JSON.stringify(response, null, 4));
     });
   };

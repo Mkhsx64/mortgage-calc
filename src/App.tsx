@@ -3,7 +3,6 @@ import './App.css';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { callMortgageAPI } from './components/getCalculations';
-import { Modal } from './components/Modal';
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -26,9 +25,6 @@ function App() {
 
   //Define constants for setting icon dynamically
   const [icon, setIcon] = useState(faSun);
-
-  //Define constants for opening and closing the Modal
-  const [isOpen, setIsOpen] = useState(false);
 
   //Define events to handle form inputs
   const { register, handleSubmit } = useForm<Inputs>();
